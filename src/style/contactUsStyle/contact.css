@@ -1,0 +1,85 @@
+/* src/Contact.css */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .contact-info {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .contact-info h2 {
+    font-size: 36px;
+  }
+  
+  .contact-info p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 10px 0;
+  }
+  
+  .contact-info p strong {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .contact-form {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .contact-form form {
+    display: flex;
+    margin-left: 100px;
+    margin-right: 100px;
+    flex-direction: column;
+  }
+  
+  .contact-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .contact-form label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #000000;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    background-color: #D1C8C1;
+  }
+  
+  .contact-form textarea {
+    height: 100px;
+  }
+  
+  .button-container{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+  }
+  .contact-form button {
+    background-color: #D1C8C1;
+    width: 40%;
+    border: none;
+    padding: 14px 30px;
+    color: #856a54;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+  }
+  
+  .contact-form button:hover {
+    background-color: #c5b3a6;
+  }
+  

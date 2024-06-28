@@ -1,0 +1,23 @@
+.tutor-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    
+  }
+  
+  .container-1 {
+    display: flex;
+    justify-content: space-between; 
+    width: 1200px; 
+    padding-top: 100px;
+    
+  }
+  
+  .container-1 h6 {
+    margin: 0; /* Remove default margin */
+  }
+  
+  .container-1 button {
+    margin-left: auto; /* Push the button to the right */
+  }
+  

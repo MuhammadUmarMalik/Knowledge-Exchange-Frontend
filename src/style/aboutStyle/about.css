@@ -1,0 +1,56 @@
+/* src/AboutUs.css */
+
+.about-us {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .image-container {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .image-container img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .text-container {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .text-container h2 {
+    color: #888888;
+    font-size: 20px;
+    font-weight: normal;
+  }
+  
+  .text-container h1 {
+    font-size: 36px;
+    margin-top: 0;
+  }
+  
+  .text-container p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 20px 0;
+  }
+  
+  .text-container button {
+    background-color: #D1C8C1;
+    border: none;
+    padding: 14px 50px;
+    color: #856a54;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+  }
+  
+  .text-container button:hover {
+    background-color: #c5b3a6;
+  }
+  

@@ -1,0 +1,53 @@
+.home-categories {
+  text-align: center;
+  padding: 20px;
+  background-color: #F6F4F3;
+}
+
+.categories-become-seller-button{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding:10px 0 10px 10px;
+}
+
+.home-categories h2{
+font-size: 46px;
+font-weight: 700;
+line-height: 40px;
+}
+
+
+.become-seller-button {
+  background-color: #D1C8C1;
+  border: none;
+  padding: 14px 30px;
+  color: #856a54;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.home-category-list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.home-category {
+  width: 20%;
+  cursor: pointer;
+  padding: 20px 10px;
+  margin: 10px;
+  background-color: white;
+}
+
+.home-category img {
+  width: 100%;
+  height: auto;
+}
+
+.home-category span {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.2em;
+}

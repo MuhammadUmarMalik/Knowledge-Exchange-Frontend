@@ -1,0 +1,79 @@
+
+.signup-form {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+
+  .signup-form form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    background-color: #ffff;
+  }
+
+  .signup-form form h2 {
+    margin-bottom: 1.5rem;
+    color: #856a54;
+  }
+  
+  .signup-form input {
+    width: 70%;
+    color: #000;
+    padding: 0.75rem;
+    font-weight: 700;
+    background-color: #D1C8C1;
+    border: none;
+    outline: none;
+    margin: 5px 0;
+   
+  }
+  .signup-form select{
+    width: 76%;
+    margin: 5px 0;
+    padding: 0.75rem;
+    font-weight: 700;
+    background-color: #D1C8C1;
+    border: none;
+    outline: none;
+    color: gray;
+  }
+  
+  .signup-form button {
+    width: 40%;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    background-color: #D1C8C1;
+    color: #856a54;
+    cursor: pointer;
+    font-weight: 800;
+    margin: 1rem;
+    margin-bottom: 2rem;
+  }
+ 
+  .signup-form .error-container{
+    width: 75%;
+    display: flex;
+    align-items:flex-end ;
+    margin: 0;
+    padding: 0;
+  }
+
+  .error {
+    color: red;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    
+  }
+  

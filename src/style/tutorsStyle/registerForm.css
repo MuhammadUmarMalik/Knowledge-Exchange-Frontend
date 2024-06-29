@@ -1,0 +1,51 @@
+.register-form {
+    width: 500px;
+    margin: 0 auto;
+    padding: 40px;
+    padding-right: 55px;
+    background-color: #f4f0ed;
+    border-radius: 10px;
+     margin-top: 50px;
+    text-align: center;
+  }
+  
+  .register-form h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .register-form p {
+    font-size: 14px;
+    color: black;
+    margin-bottom: 20px;
+  }
+  
+  .register-form input[type="text"],
+  .register-form input[type="email"],
+  .register-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #d8cbc1;
+    font-size: 14px;
+    color: black;
+    outline: #b39a8d;
+  }
+  
+  .register-form button {
+    width: 30%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #c4b1a3;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .register-form button:hover {
+    background-color: #b39a8d;
+  }

@@ -1,0 +1,87 @@
+.home-category-details-container {
+  padding: 20px;
+  background-color: #F6F4F3;
+}
+
+.home-category-details-container h1 {
+  font-size: 46px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.home-category-details-container h2 {
+  color: #856a54;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.home-category-details-list {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  gap: 50px;
+ align-items: center;
+ justify-content: center;
+}
+
+.home-category-details {
+  box-sizing: border-box; /* Ensures padding and border are included in the width calculation */
+  cursor: pointer;
+  text-align: center;
+  background-color: white;
+  flex-direction: column;
+  display: flex;
+  width: 20%;
+  padding: 20px;
+  justify-items: center;
+  
+}
+
+.home-category-details img {
+  height: 200px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.input-searchbar {
+  padding-right: 10px;
+  margin-right: 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 20px;
+  width: 200px;
+  outline: none;
+  padding-left: 10px;
+}
+
+.home-category-details-right-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-category-details-line {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+/* Optional media queries for responsive design */
+@media (max-width: 1200px) {
+  .home-category-details {
+    flex: 1 1 calc(33.333% - 20px); /* 3 columns for medium screens */
+  }
+}
+
+@media (max-width: 900px) {
+  .home-category-details {
+    flex: 1 1 calc(50% - 20px); /* 2 columns for smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .home-category-details {
+    flex: 1 1 100%; /* 1 column for very small screens */
+  }
+}

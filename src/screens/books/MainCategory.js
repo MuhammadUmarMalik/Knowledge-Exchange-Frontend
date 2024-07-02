@@ -1,12 +1,21 @@
-import React from "react";
-import { observer } from "mobx-react-lite";
-import categoryStore from "../../stores/homeStore/CategoryStore";
-import "../../style/homeStyle/category.css";
+// Category.jsx
+import React from 'react';
+import { observer } from 'mobx-react-lite';
+import { useNavigate } from 'react-router-dom';
+import categoryStore from '../../stores/homeStore/CategoryStore';
+import '../../style/homeStyle/category.css';
 
 const Category = observer(() => {
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (category) => {
+    categoryStore.selectCategory(category);
+    navigate(`/header/category/${category.id}`);
+  };
+
   return (
     <div className="home-categories">
-       <header className="categories-become-seller-button">
+      <header className="categories-become-seller-button">
         <button className="become-seller-button">Become a Seller</button>
       </header>
       <h2>CATEGORIES</h2>
@@ -15,7 +24,7 @@ const Category = observer(() => {
       </p>
       <div className="home-category-list">
         {categoryStore.categories.map((category) => (
-          <div key={category.id} className="home-category" onClick={() => categoryStore.selectCategory(category)}>
+          <div key={category.id} className="home-category" onClick={() => handleCategoryClick(category)}>
             <img src={category.image} alt={category.name} />
             <span>{category.name}</span>
           </div>

@@ -29,7 +29,7 @@ const Tutor = () => {
           <p>Become a Tutor and provide education to our students</p>
         </div>
         <div class='right-section'>
-          <NavLink to="register" className="navlink">
+          <NavLink to="/header/register" className="navlink">
             <button className="profile-button" > Register</button>
           </NavLink>
 

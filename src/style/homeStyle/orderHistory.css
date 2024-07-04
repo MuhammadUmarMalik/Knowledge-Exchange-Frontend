@@ -1,0 +1,89 @@
+/* src/style/homeStyle/orderHistory.css */
+.order-history {
+  width: 60%;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.order-history-back-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+  color: #86654B;
+  margin-bottom: 20px;
+}
+
+.order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.order-details {
+  flex: 2;
+  padding-right: 20px;
+}
+
+.order-book {
+  text-align: center;
+  flex: 1;
+}
+
+.order-book img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+.order-status {
+  flex: 1;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.order-status.rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 25px;
+  margin-top: 10px;
+  border: none;
+  padding: 10px;
+}
+
+.order-status.accepted {
+  background-color: #d4edda;
+  color: #155724;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 25px;
+  margin-top: 10px;
+  border: none;
+  padding: 10px;
+}
+
+.back-button {
+  background-color: #D1C8C1;
+  border: none;
+  padding: 10px 40px;
+  color: #856a54;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 25px;
+  margin-top: 10px;
+}
+
+

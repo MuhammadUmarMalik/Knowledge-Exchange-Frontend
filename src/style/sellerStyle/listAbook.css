@@ -1,0 +1,72 @@
+.listabbok-form-container {
+    width: 350px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    padding-top: 50px;
+    display:  flex;
+    flex-direction: row;
+  }
+  .lista-action-btn {
+    margin: 10px 0;
+    padding: 5px 20px;
+    margin-left: 100px;
+    border: none;
+    border-radius: 20px;
+    background-color: #d3c7bd;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 150px;
+}
+  
+  .form-container h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+
+  }
+  
+  .form-container p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="file"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #d1c5bd;
+    border-radius: 4px;
+    background-color: #d1c5bd;
+    font-size: 14px;
+  }
+  
+  input[type="file"] {
+    padding: 5px;
+  }
+  
+  .listabutton {
+    padding: 10px;
+    background-color: #d1c5bd;
+    border: none;
+    border-radius: 25px;
+    width: 100%;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+  
+  }
+ 
+
+.listabook-heading{
+    text-align: center;
+}  

@@ -12,14 +12,9 @@ export const menuitem = [
        
     },
     {
-        path: "books",
+        path: "category",
         name: "Books"
      
-    },
-    {
-        path: "product",
-        name: "Product"
-      
     },
     {
         path: "tutor",

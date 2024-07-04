@@ -1,0 +1,80 @@
+.offer-book-price-container {
+    padding: 20px;
+    background-color: #F6F4F3;
+    box-sizing: border-box;
+}
+
+.offer-book-price-title {
+    font-size: 24px;
+    text-align: center;
+    color: #856a54;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.offer-book-price-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.offer-book-price-left {
+    width: 40%;
+    margin-left: 150px;
+}
+
+.offer-book-price-left h3 {
+    font-size: 20px;
+    color: #856a54;
+}
+
+.offer-book-price-left p {
+    font-size: 16px;
+    line-height: 16px;
+    color: #333;
+}
+
+.price-input {
+    padding: 15px 10px;
+    border-radius: 5px;
+    width: 80%;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+.offer-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #856a54;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.offer-button:hover {
+    background-color: #6b503e;
+}
+
+.offer-book-price-right {
+    width: 80%;
+    text-align: center;
+}
+
+.offer-book-price-right img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.offer-book-price-right p {
+    font-size: 16px;
+    line-height: 16px;
+    color: #333;
+}

@@ -1,15 +1,25 @@
 import React from "react";
 import '../../style/homeStyle/home.css'; // Ensure you create this CSS file
 import bannerImgae from '../../assets/ioio.jpg'
+import { useNavigate } from "react-router-dom";
 import book1 from '../../assets/b1.jpg'
 import book2 from '../../assets/hkj.jpg'
 import book3 from '../../assets/jhj.jpg'
 
 const Home = () => {
+
+  const navigate = useNavigate();
+
+  const customerProfile = () => {
+    navigate('/header/customer-profile');
+  };
+
+
+
   return (
     <div className="home-container">
       <header className="home-profile-button">
-        <button className="profile-button">PROFILE</button>
+        <button className="profile-button" onClick={customerProfile}>PROFILE</button>
       </header>
       <section className="main-content">
         <div className="book-shelf">

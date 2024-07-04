@@ -27,7 +27,7 @@ const SignUpForm = observer(() => {
         SignUpStore.resetForm();
         
         // Navigate to header (or any other route)
-        navigate('/header');
+        navigate('/');
       } catch (error) {
         console.error("Error signing up:", error);
         alert("Failed to sign up");

@@ -22,8 +22,8 @@ const CategoryDetails = observer(() => {
       <h1>Category</h1>
       <div className="home-category-details-right-section">
         <h2>{category.name}</h2>
-        <div className="search-container">
-          <input className="input-searchbar" type="text" placeholder="Search..." />
+        <div className="home-category-search-container">
+          <input className="home-category-input-searchbar" type="text" placeholder="Search..." />
         </div>
       </div>
       <hr className="home-category-details-line" />

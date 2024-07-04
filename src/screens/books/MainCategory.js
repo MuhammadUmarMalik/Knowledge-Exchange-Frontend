@@ -13,10 +13,16 @@ const Category = observer(() => {
     navigate(`/header/category/${category.id}`);
   };
 
+
+  const becomeSeller = () => {
+    navigate('/header/become-seller');
+  };
+
+
   return (
     <div className="home-categories">
       <header className="categories-become-seller-button">
-        <button className="become-seller-button">Become a Seller</button>
+        <button className="become-seller-button" onClick={becomeSeller}>Become a Seller</button>
       </header>
       <h2>CATEGORIES</h2>
       <p>

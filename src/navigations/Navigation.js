@@ -16,12 +16,6 @@ export const menuitem = [
         name: "Books"
      
     },
-
-    {
-        path: "product",
-        name: "Product"
-      
-    },
     {
         path: "tutor",
         name: "Tutor"

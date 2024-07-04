@@ -1,0 +1,51 @@
+/* src/style/homeStyle/listedBooks.css */
+.listed-books {
+    font-family: Arial, sans-serif;
+    padding: 60px 80px;
+    background-color: #F6F4F3;
+    height: 100vh;
+  }
+  
+  .header-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .back-button,
+  .list-book-button {
+    background-color: #D1C8C1;
+    border: none;
+    padding: 10px 20px;
+    color: #856a54;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+    margin-top: 10px;
+  }
+  
+ .listed-books h2 {
+    text-align: center;
+    color: #86654B;
+    margin-bottom: 50px;
+    font-size: 36px;
+  }
+  
+  .books-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .listed-book-box{
+    padding: 10px;
+    width: 20%;
+    text-align: center;
+    background-color: #fff;
+  }
+  
+  .listed-book-box img {
+    width: 150px;
+    height: auto;
+  }
+  

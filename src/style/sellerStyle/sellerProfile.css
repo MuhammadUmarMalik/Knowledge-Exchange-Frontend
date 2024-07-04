@@ -1,0 +1,110 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.seller-profile-container{
+    display: flex;
+    justify-items: center;
+    align-items:center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    align-items: center;
+    width: 100%;
+}
+
+.seller-profile-content {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 70%;
+    margin-left: 200px;
+}
+
+.profile-title {
+    font-size: 2em;
+    margin-bottom: 0;
+   text-align: center;
+   margin-bottom: 20px;
+}
+
+.profile-subtitle {
+    font-size: 1.2em;
+    color: gray;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.profile-card {
+    background-color: white;
+    padding: 60px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin-top: 35px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-card p {
+    margin: 10px 0;
+}
+
+.edit-profile-btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #d3c7bd;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 150px;
+    
+}
+
+.edit-profile-btn:hover {
+    background-color: #b8aea5;
+}
+
+
+.seller-profile-actions {
+    margin-top: 60px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.seller-action-btn {
+    margin: 10px 0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #d3c7bd;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 200px;
+}
+
+.action-btn:hover {
+    background-color: #b8aea5;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .profile-actions {
+        top: 50px;
+    }
+
+    .action-btn {
+        width: 200px;
+    }
+}

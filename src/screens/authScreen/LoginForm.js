@@ -1,8 +1,7 @@
 import React from "react";
 import { observer } from "mobx-react-lite";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LoginStore from "../../stores/authStore/LoginStore";
-import { useNavigate } from 'react-router-dom';
 import '../../style/loginForm.css';
 import { SC } from '../../Services/serverCall';
 
@@ -16,36 +15,39 @@ const LoginForm = observer(() => {
     if (LoginStore.isFormValid()) {
       try {
         const response = await SC.postCall("/login", LoginStore.formFields);
-        alert("Login successful");
+        console.log('Response:', response); // Log the entire response object for debugging
 
-        // Ensure the response contains the expected properties
-        if (response.data && response.data.token) {
-          const { token, expires_at } = response.data.token;
-          console.log(token)
-          const roles = response.data.roles || []; // Default to an empty array if roles are not present
+        if (response && response.data) {
+          alert("Login successful");
 
-          // Save token, expiration date, and roles to localStorage
-          localStorage.setItem('authToken', token);
-          localStorage.setItem('tokenExpiration', expires_at);
-          localStorage.setItem('roles', JSON.stringify(roles)); // Convert roles array to a JSON string
+          const { token, expires_at } = response.data.data.token || {};
+          const roles = response.data.data.user.roles.map(role => role.name) || []; // Extract roles from data.user.roles
 
-          // Check token expiration
-          const expirationDate = new Date(expires_at);
-          const currentDate = new Date();
-          if (expirationDate < currentDate) {
-            alert("Your session has expired. Please log in again.");
-            localStorage.removeItem('authToken');
-            localStorage.removeItem('tokenExpiration');
-            localStorage.removeItem('roles');
-            navigate('/login'); // Navigate back to login page if token expired
+          if (token && expires_at) {
+            localStorage.setItem('authToken', token);
+            localStorage.setItem('tokenExpiration', expires_at);
+            localStorage.setItem('role', JSON.stringify(roles));
+
+            const expirationDate = new Date(expires_at);
+            const currentDate = new Date();
+
+            if (expirationDate < currentDate) {
+              alert("Your session has expired. Please log in again.");
+              localStorage.removeItem('authToken');
+              localStorage.removeItem('tokenExpiration');
+              localStorage.removeItem('roles');
+              navigate('/login');
+            } else {
+              navigate('/header');
+            }
           } else {
-            navigate('/header');
+            throw new Error("Invalid token format in response");
           }
+
+          LoginStore.resetForm();
         } else {
           throw new Error("Invalid response format");
         }
-
-        LoginStore.resetForm();
       } catch (error) {
         console.error("Error logging in:", error);
         alert("Failed to login");
@@ -71,9 +73,8 @@ const LoginForm = observer(() => {
           value={LoginStore.formFields.email}
           onChange={handleChange}
         />
-        <span className="error-container">
-          {LoginStore.errors.email && <span className="error">{LoginStore.errors.email}</span>}
-        </span>
+        {LoginStore.errors.email && <span className="error">{LoginStore.errors.email}</span>}
+        
         <input
           type="password"
           name="password"
@@ -81,11 +82,10 @@ const LoginForm = observer(() => {
           value={LoginStore.formFields.password}
           onChange={handleChange}
         />
-        <span className="error-container">
-          {LoginStore.errors.password && <span className="error">{LoginStore.errors.password}</span>}
-        </span>
+        {LoginStore.errors.password && <span className="error">{LoginStore.errors.password}</span>}
+        
         <span className="signup-link">
-          <span>Don't have an account? <Link to="/signup">Sign Up now</Link></span>
+          Don't have an account? <Link to="/signup">Sign Up now</Link>
         </span>
         <button type="submit">Login</button>
       </form>

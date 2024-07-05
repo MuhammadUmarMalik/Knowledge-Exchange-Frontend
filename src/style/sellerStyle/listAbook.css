@@ -1,5 +1,8 @@
+.seller-right-container{
+  width: 70%;
+}
 .listabbok-form-container {
-    width: 350px;
+    width: 40%;
     margin: 0 auto;
     text-align: center;
     font-family: Arial, sans-serif;
@@ -77,4 +80,4 @@
 
 .listabook-heading{
     text-align: center;
-}  
+}

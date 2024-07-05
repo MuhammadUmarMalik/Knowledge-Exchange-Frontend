@@ -59,7 +59,7 @@ const AdminPage = () => {
               <td>{request.name}</td>
               <td>{request.type}</td>
               <td>
-                <button onClick={() => handleApprove(request.id)}>
+                <button onClick={() => handleApprove(request.id)} className="admin-button">
                   Approve
                 </button>
               </td>

@@ -29,9 +29,9 @@ const Header = () => {
               <FontAwesomeIcon icon={faUser} onClick={toggleDropdown} className="user-icon" />
               {dropdownVisible && (
                 <div className="dropdown-menu">
-                  <NavLink to="/customer-profile" className="dropdown-item">Customer Profile</NavLink>
-                  <NavLink to="/user-profile" className="dropdown-item">User Profile</NavLink>
-                  <NavLink to="/tutor-profile" className="dropdown-item">Tutor Profile</NavLink>
+                  <NavLink to="/header/customer-profile" className="dropdown-item">Customer Profile</NavLink>
+                  <NavLink to="/header/seller-profile" className="dropdown-item">User Profile</NavLink>
+                  <NavLink to="/header/tutor" className="dropdown-item">Tutor Profile</NavLink>
                 </div>
               )}
             </li>

@@ -34,7 +34,7 @@ table tbody tr:nth-of-type(even) {
   background-color: #f9f9f9;
 }
 
-button {
+.admin-button {
   padding: 5px 10px;
   border: none;
   background-color: #28a745;
@@ -43,6 +43,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.admin-button:hover {
   background-color: #218838;
 }

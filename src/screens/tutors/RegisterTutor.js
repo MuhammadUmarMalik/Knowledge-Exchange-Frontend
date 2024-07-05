@@ -1,4 +1,3 @@
-// RegisterTutor.js
 import React from "react";
 import { observer } from "mobx-react-lite";
 import tutorRegistrationStore from "../../stores/tutorStore/TutorRegistrationStore";
@@ -14,17 +13,12 @@ const RegisterTutor = observer(() => {
   };
 
   const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      tutorRegistrationStore.setField("profilePicture", file);
-      console.log("File selected:", file); // Log the selected file
-    }
+    tutorRegistrationStore.formData.profilePicture = e.target.files[0];
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await tutorRegistrationStore.submitForm();
-    navigate("/header/tutor-profile");
   };
 
   return (

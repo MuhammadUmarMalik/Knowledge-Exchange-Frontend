@@ -1,10 +1,12 @@
 import React from 'react';
 import { observer } from 'mobx-react-lite';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import BecomeSellerStore from '../../stores/sellerStore/BecomeSellerStore';
 import '../../style/tutorsStyle/registerForm.css';
 
 const BecomeSeller = observer(() => {
   const store = React.useState(() => new BecomeSellerStore())[0];
+  const navigate = useNavigate(); // Initialize navigate hook
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -12,9 +14,12 @@ const BecomeSeller = observer(() => {
     console.log(`${name}: ${value}`);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    store.submitForm();
+    await store.submitForm();
+
+    // After successful submission, navigate to '/header/seller-profile'
+    navigate('/header/seller-profile');
   };
 
   return (
@@ -33,13 +38,13 @@ const BecomeSeller = observer(() => {
         {store.errors.name && <span className="error">{store.errors.name}</span>}
         <input
           type="text"
-          name="phone_number"
+          name="phoneNumber"
           placeholder="Contact No"
-          value={store.formData.phone_number}
+          value={store.formData.phoneNumber}
           onChange={handleChange}
           required
         />
-        {store.errors.phone_number && <span className="error">{store.errors.phone_number}</span>}
+        {store.errors.phoneNumber && <span className="error">{store.errors.phoneNumber}</span>}
         <button type="submit">Register</button>
       </form>
     </div>

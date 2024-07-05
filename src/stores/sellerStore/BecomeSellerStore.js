@@ -4,12 +4,12 @@ import { SC } from '../../Services/serverCall';
 class BecomeSellerStore {
   formData = {
     name: '',
-    phone_number: '',
+    phoneNumber: '',
   };
 
   errors = {
     name: '',
-    phone_number: ''
+    phoneNumber: ''
   };
 
   constructor() {
@@ -26,9 +26,9 @@ class BecomeSellerStore {
       case 'name':
         this.errors[name] = value ? '' : 'Name is required';
         break;
-      case 'phone_number':
+      case 'phoneNumber':
         const phoneRegex = /^\+92\d{10}$/;
-        this.errors.phone_number = phoneRegex.test(value) ? '' : 'Enter a valid phone number in the format +92XXXXXXXXXX';
+        this.errors.phoneNumber = phoneRegex.test(value) ? '' : 'Enter a valid phone number in the format +92XXXXXXXXXX';
         break;
       default:
         break;
@@ -37,9 +37,9 @@ class BecomeSellerStore {
 
   validateForm() {
     this.validateField('name', this.formData.name);
-    this.validateField('phone_number', this.formData.phone_number);
+    this.validateField('phoneNumber', this.formData.phoneNumber);
 
-    return !this.errors.name && !this.errors.phone_number;
+    return !this.errors.name && !this.errors.phoneNumber;
   }
 
   async submitForm(callbackProgressUpload) {
@@ -52,6 +52,11 @@ class BecomeSellerStore {
       const response = await SC.postCall('/apply-seller', this.formData);
 
       console.log('Form submitted successfully', response.data);
+      
+      // Reset form fields and errors
+      this.formData.name = '';
+      this.formData.phoneNumber = '';
+
     } catch (error) {
       console.error('Error submitting form', error);
     }

@@ -1,7 +1,14 @@
 import React from 'react'
 import '../../style/aboutStyle/about.css'
 import aboutImg from '../../assets/hjhjjhd.jpg'
+import { useNavigate } from "react-router-dom";
+
 const About = () => {
+  const navigate = useNavigate();
+  const  goShopPage=()=>{
+    navigate('/header/category');
+
+ };
   return (
     <div className="about-us">
     <div className="image-container">
@@ -16,7 +23,7 @@ const About = () => {
         stationery and resource materials, and a unique opportunity for aspiring tutors to find teaching jobs. 
         With a user-friendly our platform simplifies the educational experience for all users.
       </p>
-      <button>BUY NOW</button>
+      <button  onClick={goShopPage}>BUY NOW</button>
     </div>
   </div>
   )

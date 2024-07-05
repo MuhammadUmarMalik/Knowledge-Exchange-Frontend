@@ -26,24 +26,28 @@ class TutorRegistrationStore {
 
   submitForm = async () => {
     try {
-      const dataToSend = {
-        subject: this.formData.subject,
-        qualification: this.formData.qualification,
-        fee: this.formData.fee,
-        location: this.formData.location,
-        profilePicture: this.formData.profilePicture ? this.formData.profilePicture.name : "", // Send only the file name
-      };
-
-      const response = await SC.postCall("/apply-tutor", dataToSend);
-
+      const formData = new FormData();
+      formData.append("subject", this.formData.subject);
+      formData.append("qualification", this.formData.qualification);
+      formData.append("fee", this.formData.fee);
+      formData.append("location", this.formData.location);
+      formData.append("profilePicture", this.formData.profilePicture);
+  
+      const response = await SC.postCall("/apply-tutor", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+  
       console.log("Tutor registration form submit response:", response);
-
+  
       // Reset form after successful submission
       this.resetForm();
     } catch (error) {
       console.error("Error submitting tutor registration form:", error);
     }
   };
+  
 
   resetForm = () => {
     this.formData = {

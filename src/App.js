@@ -20,7 +20,7 @@ import SellerProfile from "./screens/SellerScreens/SellerProfile";
 import ListABook from "./screens/SellerScreens/ListABook";
 import OrderList from "./screens/SellerScreens/OrderList";
 import RegisterTutor from "./screens/tutors/RegisterTutor";
-
+import AdminPage from "./screens/admin/Admin";
 
 const App = () => {
   return (
@@ -33,20 +33,20 @@ const App = () => {
           <Route path="about" element={<About />} />
           <Route path="books" element={<Books />} />
           <Route path="tutor" element={<Tutor />} />
-          <Route path="/header/category" element={<Category/>}/>
+          <Route path="/header/category" element={<Category />} />
           <Route path="category/:categoryId" element={<CategoryDetails />} />
           <Route path="book/:subcategoryId" element={<BookDetails />} />
-          <Route path="/header/offer/:subcategoryId" element={<OfferBookPrice/>} />
-          <Route path="/header/offer/:subcategoryId" element={<OfferBookPrice/>}  />
-          <Route path="/header/customer-profile" element={<CustomerProfile/>} />
-          <Route path="/header/order-history" element={<OrderHistory/>} />
-          <Route path="/header/listed-books" element={<ViewListedBooks/>} />
-          <Route path="/header/become-seller" element={<BecomeSeller/>} />
-          <Route path="/header/seller-profile" element={<SellerProfile/>} />
-          <Route path="/header/list-a-book" element={<ListABook/>} />
-          <Route path="/header/order-list" element={<OrderList/>} />
-          <Route path="/header/register-tutor" element={<RegisterTutor/>} />
+          <Route path="/header/offer/:subcategoryId" element={<OfferBookPrice />} />
+          <Route path="/header/customer-profile" element={<CustomerProfile />} />
+          <Route path="/header/order-history" element={<OrderHistory />} />
+          <Route path="/header/listed-books" element={<ViewListedBooks />} />
+          <Route path="/header/become-seller" element={<BecomeSeller />} />
+          <Route path="/header/seller-profile" element={<SellerProfile />} />
+          <Route path="/header/list-a-book" element={<ListABook />} />
+          <Route path="/header/order-list" element={<OrderList />} />
+          <Route path="/header/register-tutor" element={<RegisterTutor />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="admin" element={<AdminPage />} />
         </Route>
       </Routes>
     </Router>

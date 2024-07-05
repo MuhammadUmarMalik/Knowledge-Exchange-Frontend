@@ -1,5 +1,8 @@
+.seller-right-container{
+  width: 70%;
+}
 .listabbok-form-container {
-    width: 350px;
+    width: 40%;
     margin: 0 auto;
     text-align: center;
     font-family: Arial, sans-serif;
@@ -49,6 +52,14 @@
     background-color: #d1c5bd;
     font-size: 14px;
   }
+  select{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #d1c5bd;
+    border-radius: 4px;
+    background-color: #d1c5bd;
+    font-size: 14px;
+  }
   
   input[type="file"] {
     padding: 5px;
@@ -69,4 +80,4 @@
 
 .listabook-heading{
     text-align: center;
-}  
+}

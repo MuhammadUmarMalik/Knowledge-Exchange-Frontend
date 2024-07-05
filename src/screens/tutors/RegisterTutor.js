@@ -1,36 +1,29 @@
-import React, { useState } from 'react';
-import '../../style/tutorsStyle/registerForm.css';
+// RegisterTutor.js
+import React from "react";
+import { observer } from "mobx-react-lite";
+import tutorRegistrationStore from "../../stores/tutorStore/TutorRegistrationStore";
+import "../../style/tutorsStyle/registerForm.css";
+import { useNavigate } from "react-router-dom";
 
-const RegisterTutor = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    qualification: '',
-    contactNo: '',
-    fee: '',
-    location: '',
-    picture: null
-  });
+const RegisterTutor = observer(() => {
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
+    tutorRegistrationStore.setField(name, value);
   };
 
   const handleFileChange = (e) => {
-    setFormData({
-      ...formData,
-      picture: e.target.files[0]
-    });
+    const file = e.target.files[0];
+    console.log(file)
+    if (file) {
+      tutorRegistrationStore.setField("profilePicture", file);
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    await tutorRegistrationStore.submitForm();
   };
 
   return (
@@ -39,25 +32,9 @@ const RegisterTutor = () => {
       <p>Become a Tutor and provide education to our students</p>
       <input
         type="text"
-        name="name"
-        placeholder="Name"
-        value={formData.name}
-        onChange={handleChange}
-        required
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="E-Mail"
-        value={formData.email}
-        onChange={handleChange}
-        required
-      />
-      <input
-        type="text"
         name="subject"
         placeholder="Subject"
-        value={formData.subject}
+        value={tutorRegistrationStore.formData.subject}
         onChange={handleChange}
         required
       />
@@ -65,15 +42,7 @@ const RegisterTutor = () => {
         type="text"
         name="qualification"
         placeholder="Qualification"
-        value={formData.qualification}
-        onChange={handleChange}
-        required
-      />
-      <input
-        type="text"
-        name="contactNo"
-        placeholder="Contact No"
-        value={formData.contactNo}
+        value={tutorRegistrationStore.formData.qualification}
         onChange={handleChange}
         required
       />
@@ -81,7 +50,7 @@ const RegisterTutor = () => {
         type="text"
         name="fee"
         placeholder="Per Subject Fee"
-        value={formData.fee}
+        value={tutorRegistrationStore.formData.fee}
         onChange={handleChange}
         required
       />
@@ -89,19 +58,14 @@ const RegisterTutor = () => {
         type="text"
         name="location"
         placeholder="Location"
-        value={formData.location}
+        value={tutorRegistrationStore.formData.location}
         onChange={handleChange}
         required
       />
-      <input
-        type="file"
-        name="picture"
-        onChange={handleFileChange}
-        required
-      />
+      <input type="file" name="profilePicture" onChange={handleFileChange} required />
       <button type="submit">Register</button>
     </form>
   );
-};
+});
 
 export default RegisterTutor;

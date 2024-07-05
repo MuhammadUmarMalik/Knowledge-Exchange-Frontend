@@ -19,6 +19,7 @@ import BecomeSeller from "./screens/SellerScreens/BecomeSeller";
 import SellerProfile from "./screens/SellerScreens/SellerProfile";
 import ListABook from "./screens/SellerScreens/ListABook";
 import OrderList from "./screens/SellerScreens/OrderList";
+import RegisterTutor from "./screens/tutors/RegisterTutor";
 
 
 const App = () => {
@@ -44,6 +45,7 @@ const App = () => {
           <Route path="/header/seller-profile" element={<SellerProfile/>} />
           <Route path="/header/list-a-book" element={<ListABook/>} />
           <Route path="/header/order-list" element={<OrderList/>} />
+          <Route path="/header/register-tutor" element={<RegisterTutor/>} />
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>

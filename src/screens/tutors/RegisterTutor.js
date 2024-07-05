@@ -15,15 +15,16 @@ const RegisterTutor = observer(() => {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    console.log(file)
     if (file) {
       tutorRegistrationStore.setField("profilePicture", file);
+      console.log("File selected:", file); // Log the selected file
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await tutorRegistrationStore.submitForm();
+    navigate("/header/tutor-profile");
   };
 
   return (

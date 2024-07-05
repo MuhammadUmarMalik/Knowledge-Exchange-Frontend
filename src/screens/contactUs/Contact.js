@@ -6,11 +6,11 @@ import contactFormStore from '../../stores/authStore/ContactFormStore'; // Adjus
 import '../../style/contactUsStyle/contact.css';
 
 const Contact = observer(() => {
-  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await contactFormStore.submitForm();
+    contactFormStore.resetForm();
     // Handle any navigation or UI changes after form submission
   };
 

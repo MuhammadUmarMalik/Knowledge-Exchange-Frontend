@@ -1,57 +1,92 @@
 /* Header.css */
 
 .main-container {
-    background-color: #ffffff;
-    box-sizing: border-box;
-    width: 100%;
-  }
-  
-  .header-container {
-    background-color: #E7D5C2;
-    margin: 0 auto;
-    padding: 20px 10px;
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .header h5 {
-    margin: 0;
-    font-size: 1.5rem;
-  }
-  
-  .header ul {
-    list-style-type: none;
-    display: flex;
-    
-    margin: 0;
-    padding: 0;
-  }
-  
-  .header ul li {
-    margin-right: 20px;
-  }
-  
-  .header ul li:last-child {
-    margin-right: 0;
-  }
-  
-  .header a {
-    text-decoration: none;
-    color: black;
-    font-size: medium;
-  }
-  
-  .header a:hover {
-    color: #333;
-  }
-  
-  .header .icon {
-    margin-right: 5px;
-  }
-  .rightside-container{
-    width: 100%;
-  }
+  background-color: #ffffff;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.header-container {
+  background-color: #E7D5C2;
+  margin: 0 auto;
+  padding: 20px 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h5 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.header ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.header ul li {
+  margin-right: 20px;
+}
+
+.header ul li:last-child {
+  margin-right: 0;
+}
+
+.header a {
+  text-decoration: none;
+  color: black;
+  font-size: medium;
+}
+
+.header a:hover {
+  color: #333;
+}
+
+.header .icon {
+  margin-right: 5px;
+}
+
+.user-icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+.user-icon {
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+.dropdown-menu {
+  display: block;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 100%;
+  right: 0;
+  min-width: 160px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none;
+  color: black;
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background-color: #ddd;
+}
+
+.rightside-container {
+  width: 100%;
+}

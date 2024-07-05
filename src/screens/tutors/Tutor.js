@@ -18,13 +18,14 @@ const Tutor = () => {
   return (
     <div className='container'>
       <div className='top-section'>
-        <div className='left-section'>
-          <h2>Tutors</h2>
-          <p>Become a Tutor and provide education to our students</p>
+        <div class='left-section'>
+          <h2 class="heading">Tutors</h2>
+          <p class="description">Become a Tutor and provide education to our students</p>
         </div>
-        <div className='right-section'>
-          <NavLink to="/header/register-tutor" className="navlink"> {/* Updated NavLink to /header/register-tutor */}
-            <button className="profile-button">Register</button>
+
+        <div class='right-section'>
+          <NavLink to="/header/register-tutor" className="navlink">
+            <button className="profile-button" > Register</button>
           </NavLink>
 
           <div className="search-container">

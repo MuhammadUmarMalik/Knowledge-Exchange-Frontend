@@ -49,6 +49,14 @@
     background-color: #d1c5bd;
     font-size: 14px;
   }
+  select{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #d1c5bd;
+    border-radius: 4px;
+    background-color: #d1c5bd;
+    font-size: 14px;
+  }
   
   input[type="file"] {
     padding: 5px;

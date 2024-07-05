@@ -1,51 +1,72 @@
-/* src/style/homeStyle/listedBooks.css */
-.listed-books {
-    font-family: Arial, sans-serif;
-    padding: 60px 80px;
-    background-color: #F6F4F3;
-    height: 100vh;
-  }
+.listed-books-container{
+  font-family: Arial, sans-serif;
+  padding: 60px 80px;
+  background-color: #F6F4F3;
+  height: 100vh;
   
-  .header-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  .back-button,
-  .list-book-button {
-    background-color: #D1C8C1;
-    border: none;
-    padding: 10px 20px;
-    color: #856a54;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 25px;
-    margin-top: 10px;
-  }
-  
- .listed-books h2 {
-    text-align: center;
-    color: #86654B;
-    margin-bottom: 50px;
-    font-size: 36px;
-  }
-  
-  .books-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  
-  .listed-book-box{
-    padding: 10px;
-    width: 20%;
-    text-align: center;
-    background-color: #fff;
-  }
-  
-  .listed-book-box img {
-    width: 150px;
-    height: auto;
-  }
-  
+}
+.header-buttons {
+  display: flex;
+  width: 100%;
+  height:8vh;
+  justify-content: space-between; /* Ensure buttons are spaced apart */
+  align-items: center; /* Center align items vertically */
+  margin-bottom: 20px;
+}
+
+.bback-button {
+  background-color: #d1c8c1;
+  border: none;
+  padding: 10px 20px;
+  color: #856a54;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.listt-book-button {
+  background-color: #d1c8c1;
+  border: none;
+  padding: 10px 20px;
+  color: #856a54;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 25px;
+}
+.listed-books-title{
+  padding-bottom: 20px;
+  font-size: 29px;
+}
+
+
+
+.books-container {
+  border-top: 2px solid #ccc; /* Add full-width border */
+  padding-top: 20px; /* Optional: Adjust padding for spacing */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.listed-book-box {
+  padding: 10px;
+  width: 20%;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.listed-book-box img {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+.listed-book-box p {
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+}

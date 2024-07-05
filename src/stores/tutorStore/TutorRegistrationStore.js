@@ -26,14 +26,15 @@ class TutorRegistrationStore {
 
   submitForm = async () => {
     try {
-      const formData = new FormData();
-      for (const key in this.formData) {
-        formData.append(key, this.formData[key]);
-      }
+      const dataToSend = {
+        subject: this.formData.subject,
+        qualification: this.formData.qualification,
+        fee: this.formData.fee,
+        location: this.formData.location,
+        profilePicture: this.formData.profilePicture ? this.formData.profilePicture.name : "", // Send only the file name
+      };
 
-      console.log("FormData to be submitted:", Array.from(formData.entries())); // Log formData to check contents
-
-      const response = await SC.postCall("/apply-tutor", formData);
+      const response = await SC.postCall("/apply-tutor", dataToSend);
 
       console.log("Tutor registration form submit response:", response);
 

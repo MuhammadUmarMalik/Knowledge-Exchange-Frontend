@@ -19,6 +19,7 @@ const RegisterTutor = observer(() => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await tutorRegistrationStore.submitForm();
+    navigate('tutor')
   };
 
   return (

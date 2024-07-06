@@ -34,16 +34,17 @@
     font-size: 16px;
     line-height: 16px;
     color: #333;
+    margin: 10px 0; /* Added margin for spacing between paragraphs */
 }
 
-.price-input {
+.price-input, .address-input, .phone-input, .quantity-input, .name-input, .email-input {
     padding: 15px 10px;
     border-radius: 5px;
-    width: 80%;
+    width: 100%;
     font-size: 16px;
     border: none;
     outline: none;
-    background-color: white;
+    background-color: #d1c5bd;
 }
 
 .offer-button {

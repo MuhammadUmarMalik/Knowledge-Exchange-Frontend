@@ -1,7 +1,15 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable, runInAction } from "mobx";
+import { SC } from '../../Services/serverCall'; // Import your API service
 
 class OfferStore {
   price = "";
+  address = "";
+  phone = "";
+  quantity = 1;
+  name = "";
+  email = "";
+  selectedBook = null; // To store the selected book details
+  customerId = null; // To store the customer ID
 
   constructor() {
     makeAutoObservable(this);
@@ -11,9 +19,73 @@ class OfferStore {
     this.price = price;
   }
 
-  submitOffer(subcategoryId) {
-    console.log(`Offer submitted for subcategory ${subcategoryId}: ${this.price}`);
-    // Add logic for submitting the offer
+  setAddress(address) {
+    this.address = address;
+  }
+
+  setPhone(phone) {
+    this.phone = phone;
+  }
+
+  setQuantity(quantity) {
+    this.quantity = quantity;
+  }
+
+  setName(name) {
+    this.name = name;
+  }
+
+  setEmail(email) {
+    this.email = email;
+  }
+
+  setSelectedBook(book) {
+    this.selectedBook = book;
+  }
+
+  setCustomerId(id) {
+    this.customerId = id;
+  }
+
+  async fetchCustomerData() {
+    try {
+      const response = await SC.getCall('/customer');
+      runInAction(() => {
+        this.setCustomerId(response.data.data.user.id); // Assuming the response has an `id` field
+      });
+    } catch (error) {
+      console.error("Failed to fetch customer data:", error);
+    }
+  }
+
+  async submitOffer(bookId) {
+    if (!this.selectedBook) {
+      console.error("No book selected for offer.");
+      return;
+    }
+
+    if (!this.customerId) {
+      console.error("No customer ID found.");
+      return;
+    }
+
+    const offerData = {
+      bookId,
+      customerId: this.customerId,
+      offerPrice: this.price,
+      address: this.address,
+      phone: this.phone,
+      quantity: this.quantity,
+      name: this.name,
+      email: this.email
+    };
+
+    try {
+      const response = await SC.postCall('/customer/orders', offerData);
+      console.log("Offer submitted successfully:", response.data);
+    } catch (error) {
+      console.error("Failed to submit offer:", error);
+    }
   }
 }
 

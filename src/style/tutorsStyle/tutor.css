@@ -141,9 +141,9 @@
   font-size: 24px;
 }
 
-.popup-inner img.tutor-image {
-  width: 150px;
-  height: 150px;
+.popup-inner .tutor-image {
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 20px;

@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, { useEffect } from "react";
 import { observer } from "mobx-react-lite";
 import { useParams, useNavigate } from "react-router-dom";
 import categoryStore from "../../stores/homeStore/CategoryStore";
@@ -9,33 +10,44 @@ const CategoryDetails = observer(() => {
   const category = categoryStore.categories.find(cat => cat.id === Number(categoryId));
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (category) {
+      categoryStore.selectCategory(category);
+      if (categoryStore.books.length === 0) {
+        categoryStore.fetchBooks();
+      } else {
+        categoryStore.filterBooksByCategory();
+      }
+    }
+  }, [categoryId, category]);
+
   if (!category) {
     return <div>Category not found</div>;
   }
 
-  const handleBookClick = (subcategoryId) => {
-    navigate(`/header/book/${subcategoryId}`);
+  const handleBookClick = (bookId) => {
+    navigate(`/header/book/${bookId}`);
   };
 
   return (
     <div className="home-category-details-container">
-      <h1>Category</h1>
+      <h1>{category.name}</h1>
       <div className="home-category-details-right-section">
-        <h2>{category.name}</h2>
+        <h2>Books in {category.name}</h2>
         <div className="home-category-search-container">
           <input className="home-category-input-searchbar" type="text" placeholder="Search..." />
         </div>
       </div>
       <hr className="home-category-details-line" />
       <div className="home-category-details-list">
-        {category.subcategories.map((subcategory) => (
+        {categoryStore.filteredBooks.map((book) => (
           <div
-            key={subcategory.id}
+            key={book.id}
             className="home-category-details"
-            onClick={() => handleBookClick(subcategory.id)}
+            onClick={() => handleBookClick(book.id)}
           >
-            <img src={subcategory.image} alt={subcategory.name} />
-            <span>{subcategory.name}</span>
+            <img src={`http://localhost:3333/${book.images[0]}`} alt={book.name} />
+            <span>{book.name}</span>
           </div>
         ))}
       </div>
@@ -44,3 +56,6 @@ const CategoryDetails = observer(() => {
 });
 
 export default CategoryDetails;
+
+
+

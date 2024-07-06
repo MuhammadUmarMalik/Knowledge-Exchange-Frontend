@@ -35,7 +35,7 @@ const App = () => {
           <Route path="tutor" element={<Tutor />} />
           <Route path="/header/category" element={<Category />} />
           <Route path="category/:categoryId" element={<CategoryDetails />} />
-          <Route path="book/:subcategoryId" element={<BookDetails />} />
+          <Route path="book/:bookId" element={<BookDetails />} />
           <Route path="/header/offer/:subcategoryId" element={<OfferBookPrice />} />
           <Route path="/header/customer-profile" element={<CustomerProfile />} />
           <Route path="/header/order-history" element={<OrderHistory />} />

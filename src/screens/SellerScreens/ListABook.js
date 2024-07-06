@@ -1,10 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
-import '../../style/sellerStyle/listAbook.css'
+import '../../style/sellerStyle/listAbook.css';
 import listABookStore from '../../stores/sellerStore/ListABookStore';
 import { SC } from '../../Services/serverCall';
-const ListABook = () => {
+
+const ListABook = observer(() => {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -12,10 +13,11 @@ const ListABook = () => {
 
     // Prepare form data
     const formData = new FormData();
-    formData.append('bookName', listABookStore.bookName);
+    formData.append('name', listABookStore.bookName);
     formData.append('author', listABookStore.author);
     formData.append('price', listABookStore.price);
     formData.append('condition', listABookStore.condition);
+    formData.append('quantity', listABookStore.quantity); // New field for quantity
     formData.append('path', listABookStore.bookImage);
     formData.append('category_id', listABookStore.selectedCategory); // Use category_id
     formData.append('sellerId', listABookStore.sellerId);
@@ -39,14 +41,13 @@ const ListABook = () => {
   };
 
   const handleImageUpload = (e) => {
-    listABookStore.setBookImage(e.target.files[0]);
+    listABookStore.bookImage = e.target.files[0];
   };
- 
 
   return (
     <div className="listabbok-form-container">
-      <div className=' seller-right-container'>
-        <h2 className='listabook-heading'>List Book</h2>
+      <div className="seller-right-container">
+        <h2 className="listabook-heading">List Book</h2>
         <p>Become a Seller and sell Books that are in good condition to our students</p>
         <form onSubmit={handleSubmit}>
           <input 
@@ -73,6 +74,12 @@ const ListABook = () => {
             value={listABookStore.condition} 
             onChange={(e) => listABookStore.setCondition(e.target.value)} 
           />
+          <input 
+            type="number" 
+            placeholder="Quantity" 
+            value={listABookStore.quantity} 
+            onChange={(e) => listABookStore.setQuantity(e.target.value)} 
+          />
           <select
             value={listABookStore.selectedCategory}
             onChange={(e) => listABookStore.setSelectedCategory(e.target.value)}
@@ -89,16 +96,19 @@ const ListABook = () => {
             accept="image/*" 
             onChange={handleImageUpload} 
           />
-          <button className="listabutton" type="submit">List</button>
+          {listABookStore.imagePreview && (
+            <img src={listABookStore.imagePreview} alt="Book Preview" />
+          )}
+          <button className="listabutton" type="submit" onClick={()=> navigate('/header/seller-profile')}>List</button>
         </form>
       </div>
       <div className="listabbok-profile-actions">
-        <button className='listabutton' onClick={() => navigate('/listabook')}>
+        <button className="listabutton" onClick={() => navigate(-1)}>
           BACK TO Profile
         </button>
       </div>
     </div>
   );
-};
+});
 
-export default observer(ListABook);
+export default ListABook;

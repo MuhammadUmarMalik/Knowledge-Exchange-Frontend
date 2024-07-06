@@ -1,4 +1,4 @@
-// Category.jsx
+
 import React from 'react';
 import { observer } from 'mobx-react-lite';
 import { useNavigate } from 'react-router-dom';
@@ -13,11 +13,9 @@ const Category = observer(() => {
     navigate(`/header/category/${category.id}`);
   };
 
-
   const becomeSeller = () => {
     navigate('/header/become-seller');
   };
-
 
   return (
     <div className="home-categories">

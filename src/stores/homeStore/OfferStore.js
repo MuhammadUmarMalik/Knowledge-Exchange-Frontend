@@ -72,19 +72,24 @@ class OfferStore {
     const offerData = {
       bookId,
       customerId: this.customerId,
-      offerPrice: this.price,
+      offer: this.price,
       address: this.address,
       phone: this.phone,
-      quantity: this.quantity,
+      buyingQuantity: this.quantity,
       name: this.name,
       email: this.email
     };
 
     try {
-      const response = await SC.postCall('/customer/orders', offerData);
-      console.log("Offer submitted successfully:", response.data);
+      const response = await SC.postCall('/orders', offerData);
+      runInAction(() => {
+        console.log("Offer submitted successfully:", response.data);
+        alert("Offer submitted successfully!");
+        // Optionally, you can reset form fields or perform other actions upon successful submission
+      });
     } catch (error) {
       console.error("Failed to submit offer:", error);
+      alert("Failed to submit offer. Please try again.");
     }
   }
 }

@@ -18,7 +18,11 @@ const BookDetails = () => {
       console.log('id', bookId)
       const foundBook = categoryStore.books.find(book => book.id === Number(bookId));
       console.log("Found Book:", foundBook); // Debug line
-      setBook(foundBook);
+      if (foundBook) {
+        setBook(foundBook);
+      } else {
+        console.error(`Book with id ${bookId} not found.`);
+      }
     };
 
     fetchData();

@@ -42,7 +42,7 @@ const Tutor = observer(() => {
       <div className='bottom-section'>
         {tutorStore.tutors.map((item, index) => (
           <div className="tutor-item" key={index}>
-            <img src={`http://localhost:3333/${item.profile_picture}`} alt={item.name} className='tutor-image'/>
+            <img src={http://localhost:3333/${item.profile_picture}} alt={item.name} className='tutor-image'/>
             <span className="tutor-name">{item.name}</span>
             <span className="tutor-subject">{item.subject}</span>
             <button className="tutor-profile-button" onClick={() => handleViewProfile(item)}>
@@ -57,7 +57,7 @@ const Tutor = observer(() => {
           <div className="popup-inner">
             <button className="close-btn" onClick={() => setSelectedTutor(null)}>Close</button>
             <h2>Tutor Details</h2>
-            <img src={`http://localhost:3333/${selectedTutor.profile_picture}`} alt={selectedTutor.name} className='tutor-image'/>
+            <img src={http://localhost:3333/${selectedTutor.profile_picture}} alt={selectedTutor.name} className='tutor-image'/>
             <p>Name: {selectedTutor.name}</p>
             <p>Subject: {selectedTutor.subject}</p>
             <p>Qualifications: {selectedTutor.qualifications || 'Not specified'}</p>

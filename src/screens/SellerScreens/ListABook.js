@@ -23,17 +23,19 @@ const ListABook = observer(() => {
     formData.append('sellerId', listABookStore.sellerId);
 
     try {
-      // Replace with your API endpoint
-      const response = await SC.postCall('/books', formData);
+     // Replace with your API endpoint
+     const response = await SC.postCall('/books', formData);
 
-      // Handle response as needed
-      console.log('Response:', response.data);
+     // Handle response as needed
+     console.log('Response:', response.data);
 
-      // Reset form after successful submission
-      listABookStore.resetForm();
+     // Reset form after successful submission
+     listABookStore.resetForm();
 
-      // Navigate or show success message
-      navigate('/listabook');
+     // Show alert
+     alert('Book listed successfully!');
+
+      navigate('/header/seller-profile');
     } catch (error) {
       console.error('Error:', error);
       // Handle error scenario
@@ -99,11 +101,11 @@ const ListABook = observer(() => {
           {listABookStore.imagePreview && (
             <img src={listABookStore.imagePreview} alt="Book Preview" />
           )}
-          <button className="listabutton" type="submit" onClick={()=> navigate('/header/seller-profile')}>List</button>
+          <button className="listabutton" type="submit" onClick={()=> navigate(handleSubmit)}>List</button>
         </form>
       </div>
-      <div className="listabbok-profile-actions">
-        <button className="listabutton" onClick={() => navigate(-1)}>
+      <div className="listabbok-profile-actions" onClick={()=> navigate(-1)}>
+        <button className="listabutton" >
           BACK TO Profile
         </button>
       </div>

@@ -1,35 +1,25 @@
-// src/stores/homeStore/BookStore.js
-import { makeAutoObservable } from "mobx";
-import bui from '../../assets/bui.jpg'
+import { makeAutoObservable, runInAction } from "mobx";
+import { SC } from '../../Services/serverCall'; // Import your API service
 
 class ViewListedBooks {
-  books = [
-    {
-      id: 1,
-      title: "Business",
-      image: bui,
-    },
-    {
-      id: 2,
-      title: "Calculus",
-      image: bui,
-    },
-    {
-      id: 3,
-      title: "Botany",
-      image: bui,
-    },
-    {
-      id: 4,
-      title: "English",
-      image: bui,
-    },
-  ];
+  books = [];
 
   constructor() {
     makeAutoObservable(this);
+    this.fetchBooks();
+  }
+
+  async fetchBooks() {
+    try {
+      const response = await SC.getCall('/books'); // Update the endpoint as needed
+      runInAction(() => {
+        this.books = response.data.data; // Adjust based on your API response structure
+      });
+    } catch (error) {
+      console.error('Failed to fetch books', error);
+    }
   }
 }
 
-const ViewListedBook = new ViewListedBooks();
-export default ViewListedBook;
+const viewListedBook = new ViewListedBooks();
+export default viewListedBook;

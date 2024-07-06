@@ -56,7 +56,6 @@
 
 .book-details-image {
   max-width: 100%;
-  height: auto;
   margin-bottom: 20px;
 }
 
@@ -68,6 +67,7 @@
   font-weight: bold;
   cursor: pointer;
   border-radius: 25px;
+  margin-top: 20px;
 }
 
 .order-button:hover {

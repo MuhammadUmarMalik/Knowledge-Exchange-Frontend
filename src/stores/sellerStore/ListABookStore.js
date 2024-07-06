@@ -6,7 +6,9 @@ class ListABookStore {
   author = '';
   price = '';
   condition = '';
+  quantity = ''; // New observable for quantity
   bookImage = null;
+  imagePreview = '';
   categories = [];
   selectedCategory = '';
   sellerId = '';
@@ -33,8 +35,16 @@ class ListABookStore {
     this.condition = value;
   }
 
+  setQuantity(value) {
+    this.quantity = value; // New setter for quantity
+  }
+
   setBookImage(value) {
     this.bookImage = value;
+  }
+
+  setImagePreview(value) {
+    this.imagePreview = value;
   }
 
   setCategories(categories) {
@@ -63,10 +73,10 @@ class ListABookStore {
   async fetchSellerId() {
     try {
       const response = await SC.getCall('/seller');
-      const { sellerId } = response.data.data.user;
-      console.log(sellerId,"hello")
+      const { id } = response.data.data.user;
+      console.log(id, "hello")
       runInAction(() => {
-        this.setSellerId(sellerId);
+        this.setSellerId(id);
       });
     } catch (error) {
       console.error('Failed to fetch seller ID', error);
@@ -78,8 +88,10 @@ class ListABookStore {
     this.author = '';
     this.price = '';
     this.condition = '';
+    this.quantity = ''; // Reset quantity
     this.bookImage = null;
     this.selectedCategory = '';
+    this.imagePreview = '';
   }
 }
 

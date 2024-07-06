@@ -1,19 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { observer } from "mobx-react-lite";
 import { useNavigate } from "react-router-dom";
-import ViewListedBook from "../../stores/homeStore/ViewListedBooksStore";
+import viewListedBook from "../../stores/homeStore/ViewListedBooksStore"; // Ensure the correct export/import
 import "../../style/homeStyle/viewListedBook.css";
-
 
 const ViewListedBooks = observer(() => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    viewListedBook.fetchBooks();
+  }, []);
 
   const goBack = () => {
     navigate(-1);
   };
 
   const listBook = () => {
-    navigate("/list-book");
+    navigate("/header/list-a-book");
   };
 
   return (
@@ -24,11 +27,10 @@ const ViewListedBooks = observer(() => {
       </div>
       <h2 className="listed-books-title">LISTED BOOKS</h2>
       <div className="books-container">
-        {ViewListedBook.books.map((book) => (
+        {viewListedBook.books.map((book) => (
           <div key={book.id} className="listed-book-box">
-            <img src={book.image} alt={book.title} />
-            <p className="book-title">{book.title}</p>
-            <p className="book-author">{book.author}</p>
+            <img src={`http://localhost:3333/${book.images[0]}`} alt={book.name} />
+            <p className="book-title">{book.name}</p>
           </div>
         ))}
       </div>

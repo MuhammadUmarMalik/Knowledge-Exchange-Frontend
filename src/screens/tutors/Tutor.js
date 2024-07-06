@@ -8,10 +8,10 @@ const Tutor = observer(() => {
   const [selectedTutor, setSelectedTutor] = useState(null);
 
   useEffect(() => {
-    tutorStore.fetchTutors(); // Fetch tutor data when the component mounts
+    tutorStore.fetchTutors();
   }, []);
 
-  // Handle click on VIEW TUTOR PROFILE button
+  
   const handleViewProfile = (tutor) => {
     setSelectedTutor(tutor);
   };

@@ -49,7 +49,8 @@ const Tutor = observer(() => {
         {tutorStore.tutors.map((item, index) => (
           <div className="tutor-item" key={index}>
             <img
-              src={`http://localhost:3333/${item.profile_picture}alt={item.name}`}
+              src={`http://localhost:3333/${item.profile_picture}`}
+              alt={item.name}
               className="tutor-image"
             />
             <span className="tutor-name">{item.name}</span>
